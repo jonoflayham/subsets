@@ -17,7 +17,7 @@
         letter-frequencies (map second letters-and-frequency-pairs)
         all-count-permutations (all-values-up-to letter-frequencies)]
     (for [count-permutation all-count-permutations]
-      (filter #(not= 0 (second %)) (map vector letters count-permutation)))))
+      (filter #(not= 0 (second %)) (map list letters count-permutation)))))
 
 ; Evaluate test scenario:
-(dorun (map println (subsets [["a" 2] ["b" 2]])))
+(dorun (map println (subsets '(("a" 2) ("b" 2)))))
